@@ -4,39 +4,56 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.util.Stack;
+
 public class Controller {
     @FXML
     private TextField textField;
     @FXML
-    private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine, buttonZero, buttonDot, buttonEqual, buttonPlus, buttonMinus, buttonTimes, buttonDivide;
+    private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine, buttonZero, buttonDot, buttonEqual, buttonPlus, buttonMinus, buttonTimes, buttonDivide, buttonClearLast;
+    Stack<String> last = new Stack<>();
     public void setButtonOne(){
-        textField.setText(textField.getText() + buttonOne.getText());
+        numericButtons(buttonOne);
     }
     public void setButtonTwo(){
-        textField.setText(textField.getText() + buttonTwo.getText());
+        numericButtons(buttonTwo);
     }
     public void setButtonThree(){
-        textField.setText(textField.getText() + buttonThree.getText());
+        numericButtons(buttonThree);
     }
     public void setButtonFour(){
-        textField.setText(textField.getText() + buttonFour.getText());
+        numericButtons(buttonFour);
     }
     public void setButtonFive(){
-        textField.setText(textField.getText() + buttonFive.getText());
+        numericButtons(buttonFive);
     }
     public void setButtonSix(){
-        textField.setText(textField.getText() + buttonSix.getText());
+        numericButtons(buttonSix);
     }
     public void setButtonSeven(){
-        textField.setText(textField.getText() + buttonSeven.getText());
+        numericButtons(buttonSeven);
     }
     public void setButtonEight(){
-        textField.setText(textField.getText() + buttonEight.getText());
+        numericButtons(buttonEight);
     }
     public void setButtonNine(){
-        textField.setText(textField.getText() + buttonNine.getText());
+        numericButtons(buttonNine);
     }
     public void setButtonZero(){
-        textField.setText(textField.getText() + buttonZero.getText());
+        if(!last.empty())
+            numericButtons(buttonZero);
+    }
+    public void setButtonClearLast(){
+        textField.setText(last.pop());
+        if(last.empty()) {
+            buttonClearLast.setDisable(true);
+            buttonZero.setDisable(true);
+        }
+    }
+    public void numericButtons(Button button){
+        last.push(textField.getText());
+        textField.setText(textField.getText() + button.getText());
+        buttonClearLast.setDisable(false);
+        buttonZero.setDisable(false);
     }
 }
