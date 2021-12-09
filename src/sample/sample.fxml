@@ -1,8 +1,29 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="91.0" layoutY="44.0" prefHeight="26.0" prefWidth="130.0" />
+      <Button layoutX="17.0" layoutY="92.0" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="Button" />
+      <Button layoutX="241.0" layoutY="215.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="167.0" layoutY="215.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="91.0" layoutY="215.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="17.0" layoutY="215.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="17.0" layoutY="132.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="17.0" layoutY="174.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="167.0" layoutY="174.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="241.0" layoutY="174.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="241.0" layoutY="132.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="91.0" layoutY="174.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="91.0" layoutY="132.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="241.0" layoutY="92.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="167.0" layoutY="132.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="167.0" layoutY="92.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="91.0" layoutY="92.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="242.0" layoutY="42.0" mnemonicParsing="false" text="Button" />
+   </children>
+</AnchorPane>
