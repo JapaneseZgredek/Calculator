@@ -48,7 +48,23 @@ public class Controller {
         if(last.empty()) {
             buttonClearLast.setDisable(true);
             buttonZero.setDisable(true);
+            textField.setText("");
         }
+        if(!textField.getText().contains(".")){
+            buttonDot.setDisable(false);
+        }
+    }
+    public void setButtonDot(){
+
+        if(last.empty()){
+            textField.setText(buttonZero.getText() + buttonDot.getText());
+        }else{
+            textField.setText(textField.getText() + buttonDot.getText());
+        }
+        last.push(textField.getText());
+        buttonClearLast.setDisable(false);
+        buttonDot.setDisable(true);
+
     }
     public void numericButtons(Button button){
         last.push(textField.getText());
