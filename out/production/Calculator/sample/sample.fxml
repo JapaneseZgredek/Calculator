@@ -3,12 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <TextField fx:id="textField" layoutX="91.0" layoutY="44.0" prefHeight="26.0" prefWidth="130.0" />
-      <Button fx:id="buttonOne" layoutX="17.0" layoutY="92.0" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="1" />
+      <Button fx:id="buttonOne" layoutX="17.0" layoutY="92.0" maxWidth="-Infinity" mnemonicParsing="false" onAction="#setButtonOne" prefHeight="30.0" prefWidth="54.0" text="1" />
       <Button fx:id="buttonDivide" layoutX="241.0" layoutY="215.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="/" />
       <Button fx:id="buttonEqual" layoutX="167.0" layoutY="215.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="=" />
       <Button fx:id="buttonZero" layoutX="91.0" layoutY="215.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="0" />
@@ -24,9 +23,6 @@
       <Button fx:id="buttonSix" layoutX="167.0" layoutY="132.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="6" />
       <Button fx:id="buttonThree" layoutX="167.0" layoutY="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="3" />
       <Button fx:id="buttonTwo" layoutX="91.0" layoutY="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="2" />
-      <Button fx:id="buttonClearLast" layoutX="242.0" layoutY="42.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="74.0" text="Clear Last">
-         <font>
-            <Font size="11.0" />
-         </font></Button>
+      <Button fx:id="buttonClearLast" layoutX="242.0" layoutY="42.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="74.0" text="Clear Last" />
    </children>
 </AnchorPane>
