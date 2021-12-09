@@ -58,10 +58,12 @@ public class Controller {
 
         if(last.empty()){
             textField.setText(buttonZero.getText() + buttonDot.getText());
+            last.push(textField.getText());
         }else{
+            last.push(textField.getText());
             textField.setText(textField.getText() + buttonDot.getText());
         }
-        last.push(textField.getText());
+
         buttonClearLast.setDisable(false);
         buttonDot.setDisable(true);
 
