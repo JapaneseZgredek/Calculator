@@ -12,9 +12,9 @@ public class Controller {
     @FXML
     private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine, buttonZero, buttonDot, buttonEqual, buttonPlus, buttonMinus, buttonTimes, buttonDivide, buttonClearLast;
     Stack<String> last = new Stack<>();
+    double numberOne, numberTwo;
+    boolean equalClicked = false;
     char operation;
-    double numberOne;
-    boolean operatorClicked = false;
     public void setButtonOne(){
         numericButtons(buttonOne);
     }
@@ -46,13 +46,51 @@ public class Controller {
         numericButtons(buttonZero);
     }
     public void setButtonPlus(){
-        operation = buttonPlus.getText().charAt(0);
-        numberOne = Double.parseDouble(textField.getText());
-        textField.setText("");
+        buttonsMathematicAction(buttonPlus);
+    }
+    public void setButtonMinus(){
+        buttonsMathematicAction(buttonPlus);
+    }
+    public void setButtonTimes(){
+        buttonsMathematicAction(buttonTimes);
+    }
+    public void setButtonDivide(){
+        buttonsMathematicAction(buttonDivide);
     }
     public void setButtonEqual(){
-        numberOne = mathematicAction(numberOne,Double.parseDouble(textField.getText()),operation);
-        textField.setText(Double.toString(numberOne));
+        checkingNumberOne();
+        equalClicked = true;
+    }
+    public void buttonsMathematicAction(Button button){
+        if(!equalClicked)
+            buttonsOperations();
+        equalClicked = false;
+        operation = button.getText().charAt(0);
+        last.clear();
+        buttonZero.setDisable(true);
+        textField.setText("");
+        buttonEqual.setDisable(false);
+    }
+    public void buttonsOperations(){
+        if(numberOne != 0){
+            if(!equalClicked){
+                numberTwo = Double.parseDouble(textField.getText());
+            }            numberOne = mathematicAction(numberOne, numberTwo);
+        }else{
+            numberOne = Double.parseDouble(textField.getText());
+        }
+    }
+
+    public void checkingNumberOne(){
+        if(numberOne != 0){
+            if(!equalClicked){
+                numberTwo = Double.parseDouble(textField.getText());
+            }
+            numberOne = mathematicAction(numberOne,numberTwo);
+        }else{
+            numberOne = Double.parseDouble(textField.getText());
+        }
+        textField.setText(String.valueOf(numberOne));
     }
     public void setButtonClearLast(){
         textField.setText(last.pop());
@@ -81,7 +119,7 @@ public class Controller {
         buttonClearLast.setDisable(false);
         buttonZero.setDisable(false);
     }
-    public double mathematicAction(double numberOne, double numberTwo, char operation){
+    public double mathematicAction(double numberOne, double numberTwo){
         switch (operation){
             case '+':
                 numberOne = numberOne + numberTwo;
